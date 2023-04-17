@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>luư trữ web</title>
+        <meta charset="uft-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+        function clickCounter() {
+            if (typeof(Storage) !== "undefined") {
+              if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount)+1;
+              } else {
+                localStorage.clickcount = 1;
+              }
+              document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+            } else {
+              document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+          }
+          </script>
+    </head>
+    <body>
+        <div id="result"></div>
+        <script>
+            if (typeof(Storage) !=="undefined"){
+                localStorage.setItem("lastname","manh")
+                document.getElementById("result").
+                innerHTML = 
+                localStorage.getItem("lastname");
+            }else{
+                document.getElementById("result").
+                innerHTML="Sorry, your Storage...";
+            }
+        </script>
+        <p><button onclick="clickCounter()" type="button">Nhấn vào đây</button></p>
+        <div id="result"></div>
+        <p>Đóng tab và thử lại bộ đếm sẽ tiếp tục đếm </p>
+    </body>
+</html>
